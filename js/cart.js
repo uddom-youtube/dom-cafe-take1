@@ -32,7 +32,7 @@ function formatRiel(amount) {
 function cartTotal() {
   let total = 0;
   for (const item of cart) {
-    total = total + item.price * item.qty;
+    total = total + item.price;
   }
   return total;
 }
