@@ -1,0 +1,185 @@
+/* Menu cards + price table · Grid */
+.menu-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
+}
+
+.menu-card .name {
+  font-weight: 600;
+}
+
+.menu-card .price {
+  padding: 2px 12px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+#drinks .menu-card:first-child {
+  background: var(--brand);
+  color: var(--bg);
+}
+
+#drinks .menu-card:first-child .price {
+  background: var(--gold);
+  color: var(--brand);
+}
+
+.menu-section {
+  display: grid;
+  grid-template-areas:
+    "title"
+    "list";
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.menu-section h2 {
+  grid-area: title;
+  margin: 0;
+}
+
+.menu-section .menu-list {
+  grid-area: list;
+  margin: 0;
+}
+
+.price-table {
+  width: 100%;
+  max-width: 760px;
+  margin: 48px auto 0;
+  border-collapse: collapse;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.price-table caption {
+  padding-bottom: 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.price-table th,
+.price-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.price-table thead th {
+  background: var(--brand);
+  color: var(--bg);
+}
+
+.price-table tbody tr:nth-child(even) {
+  background: var(--bg);
+}
+
+.price-table th + th,
+.price-table td + td {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.price-table tfoot td {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@media (min-width: 700px) {
+  #drinks .menu-card:first-child {
+    grid-column: span 2;
+  }
+
+  .menu-section {
+    grid-template-columns: 200px 1fr;
+    grid-template-areas: "title list";
+    gap: 24px;
+  }
+
+  .price-table th,
+  .price-table td {
+    padding: 12px 20px;
+  }
+}
+
+.menu-card .add {
+  flex: 1 1 100%;
+  min-height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--surface);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.menu-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.menu-tools input {
+  flex: 1 1 100%;
+  min-height: 48px;
+  padding: 10px 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+}
+
+.filter {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--brand);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filter.active {
+  background: var(--brand);
+  color: var(--bg);
+}
+
+.menu-card.hidden {
+  display: none;
+}
+
+@media (min-width: 700px) {
+  .menu-tools input {
+    flex: 1 1 300px;
+  }
+}

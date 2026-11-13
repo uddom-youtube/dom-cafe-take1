@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>កុម្ម៉ង់ · Dom Café</title>
+  <meta name="description" content="កុម្ម៉ង់កាហ្វេពី Dom Café មុន ហើយមកយកតាមម៉ោងដែលអ្នកចង់បាន">
+  <link rel="icon" href="images/favicon.png">
+  <meta property="og:title" content="Dom Café · ហាងកាហ្វេ Dom">
+  <meta property="og:description" content="កុម្ម៉ង់កាហ្វេពី Dom Café មុន ហើយមកយកតាមម៉ោងដែលអ្នកចង់បាន">
+  <meta property="og:image" content="images/shop.jpg">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/theme.js" defer></script>
+  <script src="js/order.js" defer></script>
+  <script src="js/cart.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <img src="images/logo.png" alt="Dom Café logo" width="64" height="64">
+    <a href="menu.html#cart" class="cart-link">🛒 <span class="cart-count">0</span></a>
+    <button class="theme-toggle" aria-label="Dark mode">🌙</button>
+    <button class="menu-toggle" aria-expanded="false">☰ Menu</button>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">ទំព័រដើម</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="order.html" class="active">កុម្ម៉ង់</a></li>
+        <li><a href="about.html">អំពីយើង</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>កុម្ម៉ង់មុន មកយកពេលក្រោយ</h1>
+    <aside class="cart-panel" id="cart">
+      <h2>🛒 កន្ត្រករបស់អ្នក</h2>
+      <ul class="cart-items"></ul>
+      <p class="cart-total"></p>
+    </aside>
+    <form class="order-form" action="order.html" method="get">
+      <p>
+        <label for="name">ឈ្មោះ</label>
+        <input type="text" id="name" name="name" required>
+        <small class="error" id="name-error"></small>
+      </p>
+      <p>
+        <label for="phone">លេខទូរស័ព្ទ</label>
+        <input type="tel" id="phone" name="phone" placeholder="012345678" pattern="0[0-9]{8,9}" required>
+      </p>
+      <p>
+        <label for="drink">ភេសជ្ជៈ</label>
+        <select id="drink" name="drink">
+          <option value="iced-coffee-with-milk">កាហ្វេទឹកដោះគោទឹកកក · $1.50</option>
+          <option value="iced-latte">Iced Latte · $2.00</option>
+          <option value="green-tea-latte">តែបៃតងទឹកដោះគោ · $2.25</option>
+          <option value="iced-lemon-tea">តែក្រូចឆ្មា · $1.25</option>
+          <option value="coconut-shake">ក្រឡុកដូង · $1.75</option>
+        </select>
+      </p>
+      <fieldset>
+        <legend>ទំហំ</legend>
+        <label><input type="radio" name="size" value="small"> តូច</label>
+        <label><input type="radio" name="size" value="medium" checked> មធ្យម</label>
+        <label><input type="radio" name="size" value="large"> ធំ</label>
+      </fieldset>
+      <fieldset>
+        <legend>កម្រិតស្ករ</legend>
+        <label><input type="radio" name="sugar" value="0"> 0%</label>
+        <label><input type="radio" name="sugar" value="25"> 25%</label>
+        <label><input type="radio" name="sugar" value="50" checked> 50%</label>
+        <label><input type="radio" name="sugar" value="75"> 75%</label>
+        <label><input type="radio" name="sugar" value="100"> 100%</label>
+      </fieldset>
+      <p>
+        <label><input type="checkbox" name="ice" checked> ដាក់ទឹកកក</label>
+      </p>
+      <p>
+        <label for="qty">ចំនួន</label>
+        <input type="number" id="qty" name="qty" min="1" max="20" value="1">
+      </p>
+      <p>
+        <label for="time">ម៉ោងមកយក</label>
+        <input type="time" id="time" name="time" min="06:30" max="21:00">
+        <small class="error" id="time-error"></small>
+      </p>
+      <p>
+        <label for="note">ចំណាំ</label>
+        <textarea id="note" name="note" rows="3" placeholder="ឧ. ទឹកដោះគោតិច"></textarea>
+      </p>
+      <button type="submit">ផ្ញើការកុម្ម៉ង់</button>
+    </form>
+    <div class="order-summary" id="order-summary" hidden></div>
+  </main>
+  <footer class="site-footer">
+    <p>&copy; 2026 Dom Café · ផ្លូវ ២៧៨ ភ្នំពេញ</p>
+    <p>ទូរស័ព្ទ: <a href="tel:+85512345678">012 345 678</a></p>
+  </footer>
+</body>
+</html>

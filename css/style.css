@@ -1,0 +1,261 @@
+/* Dom Café · colours in one place */
+:root {
+  --ink: #2b1d16;
+  --brand: #3b2314;
+  --brand-light: #7a4320;
+  --accent: #2f7d5b;
+  --accent-soft: #e3f1ea;
+  --gold: #f2c98a;
+  --bg: #fbf6ee;
+  --surface: #ffffff;
+  --line: #ecdfcc;
+  --muted: #7a6656;
+  --shadow: 0 8px 24px rgba(59, 35, 20, 0.1);
+  --shadow-lift: 0 16px 32px rgba(59, 35, 20, 0.18);
+  --focus: 0 0 0 4px rgba(47, 125, 91, 0.25);
+  --error: #b3261e;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Kantumruy Pro", sans-serif;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+h1,
+h2 {
+  line-height: 1.4;
+  color: var(--brand);
+}
+
+a {
+  color: var(--accent);
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.order-form {
+  max-width: 600px;
+  padding: 24px;
+  background: var(--surface);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  accent-color: var(--accent);
+}
+
+.order-form label {
+  font-weight: 600;
+}
+
+.order-form p > input,
+.order-form select,
+.order-form textarea {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 4px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg);
+  font: inherit;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.order-form p > input:focus,
+.order-form select:focus,
+.order-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: var(--focus);
+}
+
+.order-form fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.order-form fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--bg);
+  font-weight: 400;
+}
+
+.order-form button {
+  width: 100%;
+  min-height: 52px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--surface);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+.order-form button:hover {
+  background: var(--brand);
+}
+
+.order-form button:active {
+  transform: scale(0.97);
+}
+
+@media (min-width: 700px) {
+  main {
+    padding: 32px 32px 64px;
+  }
+}
+
+/* Animations */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  animation: fade-up 0.8s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Dark theme: the same variables, new values */
+.dark {
+  --ink: #f3e9dc;
+  --brand: #f2c98a;
+  --brand-light: #c08a4a;
+  --accent: #6cc59a;
+  --accent-soft: #1f3a2e;
+  --gold: #3b2314;
+  --bg: #1d1410;
+  --surface: #2b1d16;
+  --line: #4a3426;
+  --muted: #c4ad98;
+  --error: #ff8a80;
+}
+
+/* Form messages */
+.order-form .error {
+  display: block;
+  color: var(--error);
+  font-size: 0.9rem;
+}
+
+.order-summary {
+  max-width: 600px;
+  margin-top: 24px;
+  padding: 20px 24px;
+  border-radius: 16px;
+  background: var(--accent-soft);
+  white-space: pre-line;
+}
+
+/* Cart */
+.cart-panel {
+  max-width: 600px;
+  margin: 40px 0 24px;
+  padding: 20px 24px;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.cart-panel h2 {
+  margin-top: 0;
+}
+
+.cart-items {
+  padding: 0;
+  list-style: none;
+}
+
+.cart-items li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-items span {
+  flex: 1;
+}
+
+.cart-items input {
+  width: 72px;
+  min-height: 40px;
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+}
+
+.cart-total {
+  margin: 16px 0 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.cart-items .remove {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+}
+
+.cart-items .remove:hover {
+  background: var(--error);
+  color: var(--surface);
+}

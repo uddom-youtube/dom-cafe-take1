@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu · Dom Café</title>
+  <meta name="description" content="Menu និងតម្លៃនៅ Dom Café ជាដុល្លារ និងរៀល">
+  <link rel="icon" href="images/favicon.png">
+  <meta property="og:title" content="Dom Café · ហាងកាហ្វេ Dom">
+  <meta property="og:description" content="Menu និងតម្លៃនៅ Dom Café ជាដុល្លារ និងរៀល">
+  <meta property="og:image" content="images/shop.jpg">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <script src="js/menu.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/theme.js" defer></script>
+  <script src="js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <img src="images/logo.png" alt="Dom Café logo" width="64" height="64">
+    <a href="menu.html#cart" class="cart-link">🛒 <span class="cart-count">0</span></a>
+    <button class="theme-toggle" aria-label="Dark mode">🌙</button>
+    <button class="menu-toggle" aria-expanded="false">☰ Menu</button>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">ទំព័រដើម</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="order.html">កុម្ម៉ង់</a></li>
+        <li><a href="about.html">អំពីយើង</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Menu</h1>
+    <p>តម្លៃគិតតាមអត្រា $1 = 4,100៛</p>
+    <div class="menu-tools">
+      <input type="search" id="search" placeholder="ស្វែងរក ឧ. latte" aria-label="ស្វែងរកមុខម្ហូប">
+      <button class="filter active" data-filter="all">ទាំងអស់</button>
+      <button class="filter" data-filter="hot">ក្តៅ · Hot</button>
+      <button class="filter" data-filter="iced">ត្រជាក់ · Iced</button>
+    </div>
+    <section class="menu-section" id="drinks">
+      <h2>ភេសជ្ជៈ · Drinks</h2>
+      <ul class="menu-list">
+        <li class="menu-card"><span class="name">កាហ្វេទឹកដោះគោទឹកកក</span> <span class="price">$1.50</span> <button class="add" data-id="iced-coffee">+ បន្ថែម</button></li>
+        <li class="menu-card"><span class="name">Iced Latte</span> <span class="price">$2.00</span> <button class="add" data-id="iced-latte">+ បន្ថែម</button></li>
+        <li class="menu-card"><span class="name">តែបៃតងទឹកដោះគោ</span> <span class="price">$2.25</span> <button class="add" data-id="green-tea-latte">+ បន្ថែម</button></li>
+        <li class="menu-card"><span class="name">តែក្រូចឆ្មា</span> <span class="price">$1.25</span> <button class="add" data-id="lemon-tea">+ បន្ថែម</button></li>
+        <li class="menu-card"><span class="name">ក្រឡុកដូង</span> <span class="price">$1.75</span> <button class="add" data-id="coconut-shake">+ បន្ថែម</button></li>
+      </ul>
+    </section>
+    <section class="menu-section" id="food">
+      <h2>អាហារ · Food</h2>
+      <ul class="menu-list">
+        <li class="menu-card"><span class="name">នំបុ័ងសាច់</span> <span class="price">$1.50</span> <button class="add" data-id="pork-bread">+ បន្ថែម</button></li>
+        <li class="menu-card"><span class="name">នំចេក</span> <span class="price">$1.00</span> <button class="add" data-id="banana-cake">+ បន្ថែម</button></li>
+        <li class="menu-card"><span class="name">បាយឆា</span> <span class="price">$2.50</span> <button class="add" data-id="fried-rice">+ បន្ថែម</button></li>
+      </ul>
+    </section>
+    <aside class="cart-panel" id="cart">
+      <h2>🛒 កន្ត្រករបស់អ្នក</h2>
+      <ul class="cart-items"></ul>
+      <p class="cart-total"></p>
+    </aside>
+    <section class="prices">
+      <table class="price-table">
+        <caption>តារាងតម្លៃ</caption>
+        <thead>
+          <tr><th>មុខម្ហូប</th><th>ដុល្លារ</th><th>រៀល</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>កាហ្វេទឹកដោះគោទឹកកក</td><td>$1.50</td><td>6,150៛</td></tr>
+          <tr><td>Iced Latte</td><td>$2.00</td><td>8,200៛</td></tr>
+          <tr><td>តែបៃតងទឹកដោះគោ</td><td>$2.25</td><td>9,225៛</td></tr>
+          <tr><td>តែក្រូចឆ្មា</td><td>$1.25</td><td>5,125៛</td></tr>
+          <tr><td>ក្រឡុកដូង</td><td>$1.75</td><td>7,175៛</td></tr>
+          <tr><td>នំបុ័ងសាច់</td><td>$1.50</td><td>6,150៛</td></tr>
+          <tr><td>នំចេក</td><td>$1.00</td><td>4,100៛</td></tr>
+          <tr><td>បាយឆា</td><td>$2.50</td><td>10,250៛</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="3">ទឹកកក និងស្ករ មិនគិតថ្លៃបន្ថែម</td></tr>
+        </tfoot>
+      </table>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>&copy; 2026 Dom Café · ផ្លូវ ២៧៨ ភ្នំពេញ</p>
+    <p>ទូរស័ព្ទ: <a href="tel:+85512345678">012 345 678</a></p>
+  </footer>
+</body>
+</html>
