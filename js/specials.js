@@ -3,7 +3,8 @@ const specialsJson = `[
   { "name": "កាហ្វេទឹកដោះគោទឹកកក", "price": 1.5, "isNew": false },
   { "name": "Iced Latte", "price": 2, "isNew": false },
   { "name": "តែបៃតងទឹកដោះគោ", "price": 2.25, "isNew": false },
-  { "name": "ក្រឡុកដូង", "price": 1.75, "isNew": true }
+  { "name": "ក្រឡុកដូង", "price": 1.75, "isNew": false },
+  { "name": "ក្រឡុកស្វាយ", "price": 2, "isNew": true }
 ]`;
 const specials = JSON.parse(specialsJson);
 
